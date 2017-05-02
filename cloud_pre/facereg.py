@@ -21,7 +21,7 @@ print faces
 for (x, y, w, h) in faces:
     cv2.rectangle(image, (x, y), (x+w, y+h), (255, 255, 255, 0), 0)
     image1 = image[y:y+h,x:x+w]
-    cv2.imshow("Faces found",image1)
+    #cv2.imshow("Faces found",image1)
 
 
 
