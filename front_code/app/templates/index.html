@@ -10,13 +10,13 @@
     <title>How far are you from a celebrity?</title>
 	
     <!-- css -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="css/nivo-lightbox.css" rel="stylesheet" />
-	<link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-	<link href="css/animations.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet">
-	<link href="color/default.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ url_for('static', filename='css/nivo-lightbox.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/nivo-lightbox-theme/default/default.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ url_for('static', filename='css/animations.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='color/default.css') }}" rel="stylesheet">
 
 </head>
 
@@ -169,7 +169,7 @@
 					<div class="service-desc">
 						<h5>Your Upload</h5>
 						<div class="divider-header"></div>
-						<img width="250px" src="img/keys.jpeg" id="previewer">
+						<img width="250px" src="{{ url_for('static', filename='img/keys.jpeg') }}" id="previewer">
 						<div ng-if="input" class="btn btn-skin btn-scroll">Match</div>
 					</div>
                 </div>
@@ -181,7 +181,7 @@
 					<div class="service-desc">
 						<h5>Match Result</h5>
 						<div class="divider-header"></div>
-						<img width="250px" src="img/keys.jpeg" id="result">
+						<img width="250px" src="{{ url_for('static', filename='img/keys.jpeg') }}" id="result">
 					</div>
                 </div>
 				</div>
@@ -219,23 +219,23 @@
 
                     <div class="row gallery-item">
                         <div class="col-md-3 animated fadeInUp">
-							<a href="img/works/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/1.jpg" class="img-responsive" alt="img">
+							<a href="/img/works/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/1.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp slow">
-							<a href="img/works/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/2.jpg" class="img-responsive" alt="img">
+							<a href="/img/works/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/2.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp slower">
-							<a href="img/works/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/3.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/3.jpg') }}" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/3.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp">
-							<a href="img/works/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/4.jpg" class="img-responsive" alt="img">
+							<a href="/img/works/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/4.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 					</div>
@@ -320,19 +320,19 @@
 	</footer>
 
     <!-- Core JavaScript Files -->
-    <script src="js/jquery.min.js"></script>	 
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.easing.min.js"></script>	
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/jquery.appear.js"></script>
-	<script src="js/stellar.js"></script>
-	<script src="js/nivo-lightbox.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>	 
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'"></script>
+	<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script>	
+	<script src="{{ url_for('static', filename='js/jquery.scrollTo.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.appear.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/stellar.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/nivo-lightbox.min.js') }}"></script>
 	
-    <script src="js/custom.js"></script>
-	<script src="js/css3-animate-it.js"></script>
-	<script src="js/upload.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/css3-animate-it.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 </body>
 
