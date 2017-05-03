@@ -10,13 +10,13 @@
     <title>How far are you from a celebrity?</title>
 	
     <!-- css -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="css/nivo-lightbox.css" rel="stylesheet" />
-	<link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-	<link href="css/animations.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet">
-	<link href="color/default.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ url_for('static', filename='css/nivo-lightbox.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/nivo-lightbox-theme/default/default.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ url_for('static', filename='css/animations.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='color/default.css') }}" rel="stylesheet">
 
 </head>
 
@@ -73,8 +73,7 @@
                                                                   <li><a href="#about">Introduction</a></li>
 																   <li><a href="#service">Services</a></li>
                                                                   <li><a href="#works">Works</a></li>				                                                                  
-                                                                  
-                                                                  <li><a href="#contact">Contact</a></li>
+                                                                  <li><a href="#contact">Business</a></li>
                                                             </ul>
                                                       </div>
                                                       <!-- /.Navbar-collapse -->
@@ -169,8 +168,9 @@
 					<div class="service-desc">
 						<h5>Your Upload</h5>
 						<div class="divider-header"></div>
-						<img width="250px" src="img/empty.jpg" id="previewer">
+						<img width="250px" src="{{ url_for('static', filename='img/empty.jpg') }}" id="previewer">
 						<div id="match" class="btn btn-skin btn-scroll" style="margin-top:10px">Match</div>
+
 					</div>
                 </div>
 				</div>
@@ -181,7 +181,8 @@
 					<div class="service-desc">
 						<h5>Match Result</h5>
 						<div class="divider-header"></div>
-						<img width="250px" src="img/empty.jpg" id="result">
+						<img width="250px" src="{{ url_for('static', filename='img/empty.jpg') }}" id="result">
+
 					</div>
                 </div>
 				</div>
@@ -219,43 +220,43 @@
 
                     <div class="row gallery-item">
                         <div class="col-md-3 animated fadeInUp">
-							<a href="img/works/1.jpg" title="1.Techniques used" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/1.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/1.jpg') }}" title="1.Techniques used" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/1.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp slow">
-							<a href="img/works/2.jpg" title="2.Environment Deployment" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/2.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/2.jpg') }}" title="2.Process Logic" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/2.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp slower">
-							<a href="img/works/3.jpg" title="3.Data Preprocess" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/3.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/3.jpg') }}" title="3.Data preprocessing" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/3.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp">
-							<a href="img/works/4.jpg" title="4.Process Logic" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/4.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/4.jpg') }}" title="4.Training process" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/4.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp">
-							<a href="img/works/5.jpg" title="5.Result Visualization" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/5.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/5.jpg') }}" title="5.Result Visualization" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/5.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp">
-							<a href="img/works/6.jpg" title="6.Anything Else" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/6.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/6.jpg') }}" title="6.Workload Distribution" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/6.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp">
-							<a href="img/works/7.jpg" title="6.Anything Else" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/7.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/7.jpg') }}" title="7.Anything Else" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/7.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 						<div class="col-md-3 animated fadeInUp">
-							<a href="img/works/8.jpg" title="6.Anything Else" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
-								<img src="img/works/8.jpg" class="img-responsive" alt="img">
+							<a href="{{ url_for('static', filename='img/works/8.jpg') }}" title="8.Anything Else" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="{{ url_for('static', filename='img/works/8.jpg') }}" class="img-responsive" alt="img">
 							</a>
 						</div>
 					</div>
@@ -274,7 +275,7 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<div class="animatedParent">
 					<div class="section-heading text-center">
-					<h2 class="h-bold animated bounceInDown">Get in touch with us</h2>
+					<h2 class="h-bold animated bounceInDown">Business Value</h2>
 					<div class="divider-header"></div>
 					</div>
 					</div>
@@ -285,34 +286,22 @@
 		
 		<div class="container">
 
-			<div class="row marginbot-80">
-				<div class="col-md-8 col-md-offset-2">
-						<form id="contact-form">
-						<div class="row marginbot-20">
-							<div class="col-md-6 xs-marginbot-20">
-								<input type="text" class="form-control input-lg" id="name" placeholder="Enter name" required="required" />
-							</div>
-							<div class="col-md-6">
-								<input type="email" class="form-control input-lg" id="email" placeholder="Enter email" required="required" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-										<input type="text" class="form-control input-lg" id="subject" placeholder="Subject" required="required" />
-								</div>
-								<div class="form-group">
-									<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
-										placeholder="Message"></textarea>
-								</div>						
-								<button type="submit" class="btn btn-skin btn-lg btn-block" id="btnContactUs">
-									Send Message</button>
-							</div>
-						</div>
-						</form>
+		
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 animatedParent">		
+				<div class="text-center">
+					<p>
+					We provide a testing service by caculating the similarity of your unploaded picture and comparing it with our huge dataset via artificial algorithm. 
+					</p>
+					<p>
+					The expected outcomes will be first, to identify which celebrity in history that you are mostly alike; secondly to satisfy your curiosity of the exact score of similartiy of those two person.
+					</p>
 				</div>
-			</div>	
+            </div>
+		
 
+        </div>		
+		</div>
 
 		</div>
 	</section>
@@ -340,19 +329,19 @@
 	</footer>
 
     <!-- Core JavaScript Files -->
-    <script src="js/jquery.min.js"></script>	 
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.easing.min.js"></script>	
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/jquery.appear.js"></script>
-	<script src="js/stellar.js"></script>
-	<script src="js/nivo-lightbox.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>	 
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'"></script>
+	<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script>	
+	<script src="{{ url_for('static', filename='js/jquery.scrollTo.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.appear.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/stellar.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/nivo-lightbox.min.js') }}"></script>
 	
-    <script src="js/custom.js"></script>
-	<script src="js/css3-animate-it.js"></script>
-	<script src="js/upload.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/css3-animate-it.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 </body>
 
