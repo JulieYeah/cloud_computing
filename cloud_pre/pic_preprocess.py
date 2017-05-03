@@ -3,8 +3,10 @@
 """pictures pre-processing from .jpg to vectors in .txt"""
 
 from os import remove
+import multiprocessing
 from os import listdir
 from glob import glob
+import threading
 import numpy as np
 import cv2
 from PIL import Image
@@ -46,18 +48,40 @@ def cvtPic2Vector(img, label, FilePath):
     with open(FilePath, 'a') as f:
         f.write(valueStr + "\n")
 
+def execute(folders):
+    i = 0
+    for folder in folders:
+        starttime = time()
+        for pic in glob(folder + '/*.jpg'):
+            name = pic.split('/')[1]
+            cvtPic2Vector(pic, i, output)
+        i += 1
+        endtime = time()
+        print str(i) + ' use time: ' + str(endtime-starttime)
+
 if __name__ == "__main__":
 
     if 'training_vector.txt' in listdir('.'):
         remove('training_vector.txt')
 
+    #  threads = []
+
     folders = glob(root_folder + '*')
-    i = 0
-    for folder in folders[2:]:
-        starttime = time()
-        i += 1
-        for pic in glob(folder + '/*.jpg'):
-            name = pic.split('/')[1]
-            cvtPic2Vector(pic, name, output)
-        endtime = time()
-        print str(i) + ' use time: ' + str(endtime-starttime)
+    #  for i in range(1):
+    #      t = threading.Thread(target=execute, args=(folders,))
+    #      threads.append(t)
+
+    #  for i in range(1):
+    #      threads[i].start()
+
+    #  for i in range(1):
+    #      threads[i].join()
+    execute(folders)
+    #  multiprocessing.freeze_support()
+    #  pool = multiprocessing.Pool()
+    #  cpus = multiprocessing.cpu_count()
+    #  results = []
+    #  for i in xrange(0, 2):
+    #      pool.apply_async(execute, args=(folders,))
+    #  pool.close()
+    #  pool.join()
