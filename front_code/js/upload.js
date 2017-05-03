@@ -1,6 +1,7 @@
 $(function(){
 var filechooser = document.getElementById('filechooser');
 var previewer = document.getElementById('previewer');
+var match = document.getElementById('match')
 
 filechooser.onchange = function() {
     var files = this.files;
@@ -27,4 +28,28 @@ filechooser.onchange = function() {
 
     reader.readAsDataURL(file);
 }   
+
+match.onclick=function(){
+   
+    console.log("submit event");
+            var img = document.getElementById('previewer');
+            var fd = new FormData();
+            fd.append("label", img);
+            console.log(fd)
+            $.ajax({
+              url: "http://localhost/upload.php",// change to be the backend receiver
+              type: "POST",
+              data: fd,
+              processData: false,  // tell jQuery not to process the data
+              contentType: false   // tell jQuery not to set contentType
+            }).done(function( data ) {
+                console.log("PHP Output:");
+                console.log( data );
+            });
+            return false;
+
+
+}
+
+
 });
