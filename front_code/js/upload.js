@@ -30,13 +30,14 @@ filechooser.onchange = function() {
 }   
 
 match.onclick=function(){
-    alert(document.getElementById('previewer'));
+   
     console.log("submit event");
-            var fd = new FormData(document.getElementById("previewer"));
-            fd.append("label", "WEBUPLOAD");
+            var img = document.getElementById('previewer');
+            var fd = new FormData();
+            fd.append("label", img);
             console.log(fd)
             $.ajax({
-              url: "http://localhost/upload.php",
+              url: "http://localhost/upload.php",// change to be the backend receiver
               type: "POST",
               data: fd,
               processData: false,  // tell jQuery not to process the data
