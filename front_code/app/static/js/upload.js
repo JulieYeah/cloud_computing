@@ -33,6 +33,7 @@ match.onclick=function(){
    
     console.log("submit event");
 			var form_data = new FormData($('#uploadform')[0]);
+                        var starttime = new Date();
 			$.ajax({
 			  url: "/upload",// change to be the backend receiver
 			  type: "POST",
@@ -41,8 +42,10 @@ match.onclick=function(){
 			  processData: false,  // tell jQuery not to process the data
 			  contentType: false   // tell jQuery not to set contentType
 			}).done(function(data) {
+				var endtime = new Date();
 				var reult = document.getElementById('result');
 				result.src = data.result;
+                                alert((endtime-starttime)/1000);
 			});
             return false;
 

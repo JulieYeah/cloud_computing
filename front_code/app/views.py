@@ -71,6 +71,6 @@ def upload():
         if files:
             path = url_for('static', filename='img/input.jpg')
             files.save('app/static/img/input.jpg')
-            output = subprocess.run("python input.py", shell=True, stdout=subprocess.PIPE, 
-                        universal_newlines=True)
+            output = subprocess.call("python input.py", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("hdfs dfs -copyFromLocal test.txt /test_vector.txt -f", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
             return jsonify(result=path)
