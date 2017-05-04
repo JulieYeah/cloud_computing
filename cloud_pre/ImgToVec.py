@@ -14,7 +14,7 @@ def ConvertImgVec(LabelPath,FilePath):
         for i in filenames:
             img_file = Image.open(ImgPath+i)
             img_file.thumbnail(size)
-            new_img_file = img_file.crop((0,0,100,100))
+            new_img_file = img_file.crop((0,0,30,30))
             # img_file.save("/Users/neo/Developer/test/" + str(i), "JPEG")
             img_grey = new_img_file.convert('L')
             value = np.asarray(img_grey.getdata(), dtype=np.int16).reshape((img_grey.size[1], img_grey.size[0]))
@@ -25,4 +25,9 @@ def ConvertImgVec(LabelPath,FilePath):
     Vectxt.write(VectorStr)
 
 
-ConvertImgVec("/Users/neo/Downloads/thumbnails_features_deduped_sample","/Users/neo/Developer/cloudCOMP/sample_svm.txt")
+# ConvertImgVec("/Users/neo/Downloads/thumbnails_features_deduped_sample","/Users/neo/Developer/cloud_computing/cloud_pre/sample_svm.txt")
+file = open("/Users/neo/training_vector.txt", 'r')
+for x in file:
+    values = [i for i in x.split(',')]
+    print(len(values),values[1])
+
