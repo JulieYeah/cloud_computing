@@ -32,20 +32,18 @@ filechooser.onchange = function() {
 match.onclick=function(){
    
     console.log("submit event");
-            var img = document.getElementById('previewer');
-            var fd = new FormData();
-            fd.append("label", img);
-            console.log(fd)
-            $.ajax({
-              url: "http://localhost/upload.php",// change to be the backend receiver
-              type: "POST",
-              data: fd,
-              processData: false,  // tell jQuery not to process the data
-              contentType: false   // tell jQuery not to set contentType
-            }).done(function( data ) {
-                console.log("PHP Output:");
-                console.log( data );
-            });
+			var form_data = new FormData($('#uploadform')[0]);
+			$.ajax({
+			  url: "/upload",// change to be the backend receiver
+			  type: "POST",
+			  data: form_data,
+			  dataType: 'json',
+			  processData: false,  // tell jQuery not to process the data
+			  contentType: false   // tell jQuery not to set contentType
+			}).done(function(data) {
+				var reult = document.getElementById('result');
+				result.src = data.result;
+			});
             return false;
 
 
