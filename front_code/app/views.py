@@ -8,6 +8,7 @@ from flask import (
 )
 from werkzeug import secure_filename
 import os
+import subprocess
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -70,5 +71,6 @@ def upload():
         if files:
             path = url_for('static', filename='img/input.jpg')
             files.save('app/static/img/input.jpg')
+            output = subprocess.run("python input.py", shell=True, stdout=subprocess.PIPE, 
+                        universal_newlines=True)
             return jsonify(result=path)
-
