@@ -30,8 +30,26 @@ filechooser.onchange = function() {
 }   
 
 match.onclick=function(){
+
+//add progress bar
+
+  var elem = document.getElementById("myBar");   
+  elem.style.display="none";
+  $('#myBar').show();
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 99) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
    
-    console.log("submit event");
+            console.log("submit event");
+
 			var form_data = new FormData($('#uploadform')[0]);
                         var starttime = new Date();
 			$.ajax({
@@ -42,13 +60,15 @@ match.onclick=function(){
 			  processData: false,  // tell jQuery not to process the data
 			  contentType: false   // tell jQuery not to set contentType
 			}).done(function(data) {
+
 				var endtime = new Date();
+                elem.style.display="none";
 				var reult = document.getElementById('result');
 				result.src = data.result;
-                                alert((endtime-starttime)/1000);
+                alert((endtime-starttime)/1000);
+                
 			});
             return false;
-
 
 }
 
