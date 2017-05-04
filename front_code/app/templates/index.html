@@ -157,7 +157,12 @@
 						<p>
 						Upload image from local in a format of jpg,png...
 						</p>
-						<input ng-modle="input" class="input-box" type="file" id="filechooser" />
+						<form id="uploadform" enctype="multipart/form-data" method="post" role="form">
+						<input name='file' ng-modle="input" class="input-box" type="file" id="filechooser" />
+						<!-- <input type="email" name="username" class="form-control" placeholder="Email address" required autofocus> -->
+						<!-- <input type="password" name="password" class="form-control" placeholder="Password" required> -->
+ 
+						</form>
 					</div>
                 </div>
 				</div>
