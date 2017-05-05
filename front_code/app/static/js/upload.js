@@ -1,7 +1,8 @@
 $(function(){
 var filechooser = document.getElementById('filechooser');
 var previewer = document.getElementById('previewer');
-var match = document.getElementById('match')
+var match = document.getElementById('match');
+
 
 filechooser.onchange = function() {
     var files = this.files;
@@ -32,10 +33,9 @@ filechooser.onchange = function() {
 match.onclick=function(){
 
 //add progress bar
-
   var elem = document.getElementById("myBar");   
-  elem.style.display="none";
-  $('#myBar').show();
+  elem.style.display="block";
+  
   var width = 10;
   var id = setInterval(frame, 10);
   function frame() {
@@ -61,10 +61,14 @@ match.onclick=function(){
 			  contentType: false   // tell jQuery not to set contentType
 			}).done(function(data) {
 
+                var match_name = document.getElementById('match_result');//display the name of the matched person 
 				var endtime = new Date();
                 elem.style.display="none";
 				var reult = document.getElementById('result');
 				result.src = data.result;
+                match_name.style.display="block"
+                match_name.innerText="鹿晗";
+            
                 alert((endtime-starttime)/1000);
                 
 			});
