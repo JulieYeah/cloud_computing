@@ -8,6 +8,7 @@ from flask import (
 )
 from werkzeug import secure_filename
 import os
+from glob import glob
 import subprocess
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -71,6 +72,21 @@ def upload():
         if files:
             path = url_for('static', filename='img/input.jpg')
             files.save('app/static/img/input.jpg')
-            output = subprocess.run("python input.py", shell=True, stdout=subprocess.PIPE, 
-                        universal_newlines=True)
-            return jsonify(result=path)
+            output = subprocess.call("python input.py", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("hdfs dfs -copyFromLocal -f /var/www/html/cloud_computing/front_code/test.txt /test_vector.txt", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("/opt/spark-2.1.0-bin-hadoop2.6/bin/spark-submit --master local /home/hduser/toLibSVM.py", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("/opt/spark-2.1.0-bin-hadoop2.6/bin/spark-submit --master local /home/hduser/LogisRegT.py", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("hdfs dfs -copyToLocal /predictionT/part-00000 /home/hduser", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            label = subprocess.Popen(["cat", "/home/hduser/part-00000"], stdout=subprocess.PIPE).stdout.read()
+            labelnum = int(label.decode("utf-8").split('.')[0])
+            name = subprocess.Popen(["grep","-E","^%s"%labelnum, "pic.log"], stdout=subprocess.PIPE).stdout.read()
+            fullname = name.decode("utf-8").split(' ')[1:3]
+            fullname = ' '.join(fullname)
+            folder = "app/static/thumbnails_features_deduped_publish/" + fullname
+            import random
+            path = url_for('static',filename=random.choice(glob(folder +"/*"))[11:])
+            label = folder.split('/')[-1]
+            hdfs = subprocess.call("hdfs dfs -rm -r /predictionT", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("hdfs dfs -rm /test_vector.txt", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            hdfs = subprocess.call("rm -rf /home/hduser/part-00000", shell=True, stdout=subprocess.PIPE, universal_newlines=True)
+            return jsonify(path=path, label=label)

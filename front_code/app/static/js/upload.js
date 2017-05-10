@@ -1,7 +1,8 @@
 $(function(){
 var filechooser = document.getElementById('filechooser');
 var previewer = document.getElementById('previewer');
-var match = document.getElementById('match')
+var match = document.getElementById('match');
+
 
 filechooser.onchange = function() {
     var files = this.files;
@@ -30,9 +31,27 @@ filechooser.onchange = function() {
 }   
 
 match.onclick=function(){
+
+//add progress bar
+  var elem = document.getElementById("myBar");   
+  elem.style.display="block";
+  
+  var width = 10;
+  var id = setInterval(frame, 100);
+  function frame() {
+    if (width >= 99) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
    
-    console.log("submit event");
+            console.log("submit event");
+
 			var form_data = new FormData($('#uploadform')[0]);
+                        var starttime = new Date();
 			$.ajax({
 			  url: "/upload",// change to be the backend receiver
 			  type: "POST",
@@ -41,11 +60,19 @@ match.onclick=function(){
 			  processData: false,  // tell jQuery not to process the data
 			  contentType: false   // tell jQuery not to set contentType
 			}).done(function(data) {
+
+                var match_name = document.getElementById('match_result');//display the name of the matched person 
+				var endtime = new Date();
+                elem.style.display="none";
 				var reult = document.getElementById('result');
-				result.src = data.result;
+				result.src = data.path;
+                match_name.style.display="block"
+                match_name.innerText=data.label;
+            
+                alert((endtime-starttime)/1000);
+                
 			});
             return false;
-
 
 }
 

@@ -1,0 +1,77 @@
+[2017-05-04 21:27:27] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2017-05-04 21:28:00] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2017-05-04 21:28:02] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2017-05-04 21:30:18] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2017-05-04 21:32:36] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2017-05-04 21:40:27] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2017-05-04 21:43:40] ERROR    Exception on /upload [POST]
+Traceback (most recent call last):
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/yeyaya/Documents/Develop/Github/cloud_computing/venv/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
