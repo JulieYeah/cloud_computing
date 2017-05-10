@@ -37,7 +37,7 @@ match.onclick=function(){
   elem.style.display="block";
   
   var width = 10;
-  var id = setInterval(frame, 10);
+  var id = setInterval(frame, 100);
   function frame() {
     if (width >= 99) {
       clearInterval(id);
@@ -65,9 +65,9 @@ match.onclick=function(){
 				var endtime = new Date();
                 elem.style.display="none";
 				var reult = document.getElementById('result');
-				result.src = data.result;
+				result.src = data.path;
                 match_name.style.display="block"
-                match_name.innerText="鹿晗";
+                match_name.innerText=data.label;
             
                 alert((endtime-starttime)/1000);
                 
